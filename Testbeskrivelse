@@ -1,0 +1,7 @@
+Fiks i #559 for #639 er å slette en fil.
+
+Det er om den er tom.
+
+Programmatisk fiks:
+Alternativ 1: curl -o fil http:vim/fil || rm fil
+Alternativ 2: if(python) pyeval(fil) catch -> rm fil
