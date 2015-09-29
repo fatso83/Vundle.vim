@@ -28,3 +28,21 @@ Use :try ... :catch:
             echo v:exception 
         endtry 
     endfunction 
+
+Using pyeval
+http://stackoverflow.com/a/13220941/200987
+
+If you don’t you have recent vim you can emulate pyeval in this case:
+
+function Pyeval(expr)
+    python import json
+    python vim.command('return '+json.dumps(eval(vim.eval('a:expr'))))
+endfunction
+
+You can test what Python version is available with: 
+        if has('python')
+          echo 'there is Python 2.x'
+        elseif has('python3')
+          echo 'there is Python 3.x'
+        endif
+
